@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>SKANVIEW</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link href="css/index.css" rel="stylesheet" />
+    <link rel="icon" href= "img/skanhawk.png" />
+    <script src ="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script><!--etiqueta angular-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!--libreria de Chart.JS-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=toggle_on" />
+</head>
+<body>
+    <!-- Barra superior -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="img/skanhawk.png" alt="logosKanHawk" />
+        </div>
+        <div class="banner">
+            <h1>TECNOLOGÍA, EFICIECIA E INNOVACIÓN<br> EN UNA SOLA HERRAMIENTA</h1>
+        </div>
+        <div class="texto">
+            <p><b>POZO:</b> CASTILLAS - 41H</p>
+            <p>ACTIVO</p>
+            <button type="button" class="pozo">
+            <a href="pozos.html">
+                <img src="public/external/pozos.png" alt="Icono de pozos" />
+            </a>
+            </button>
+        </div>
+        <div class="hora-fecha">
+            <div class="hora-fecha" id="horaFecha"></div>
+            <h1 id="hora" class="reloj">00:00</h1>
+        </div>
+        <div class="botones">
+            <img src="img/user.png" alt="user">
+            <img src="img/Vol.png" alt"Volumen"><input type="range" style ="color : #fff ;"/>
+            <a href="login.html" class="btn">Salir</a>
+            <a href="login.html"><img src= "img/exit.png" alt="Salir"></a>
+        </div>
+    </nav>
+<br>
+<div id= "header">
+    <!-- Gráficas ESTADO OPERACIONAL -->
+    <div class="contenedor">
+        <h2>ACTIVIDADES REPORTADAS POR DÍA</h2>
+        <canvas class="grafica1" id="workoverChart"></canvas>
+    </div>
+    <br>
+    <div class="contenedor2">
+        <img  src="img/Vector.png" alt="estado"> 
+        <h2>ESTADO OPERACIONAL</h2>
+        <ul class="Lista1">
+            <li>🟩 Operativo</li>
+            <li>🟧 Operativo</li>
+            <li>🟪 Esperas</li>
+            <li>🟨 Standby</li>
+        </ul>
+        <canvas class="grafica2" id="grafica2"></canvas>
+    </div>
+
+<!--GRÁFICA PRINCIPAL-->
+<div class="contenedor3">
+    <!--Botón de ajustes-->
+        <div class="diagr_liner">
+            <div class="boton1">  
+                <button type="button" class="btn-settings" id="buton-settings">
+                    <?xml version="1.0" encoding="UTF-8" standalone="no"?><svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <path d='M6.2827 14.1671L6.02839 12.1671C5.89064 12.115 5.76084 12.0525 5.63898 11.9796C5.51712 11.9067 5.39792 11.8286 5.28136 11.7452L3.38992 12.5265L1.64154 9.55774L3.27866 8.33899C3.26807 8.26607 3.26277 8.19576 3.26277 8.12805V7.70618C3.26277 7.63847 3.26807 7.56816 3.27866 7.49524L1.64154 6.27649L3.38992 3.30774L5.28136 4.08899C5.39792 4.00566 5.51977 3.92753 5.64693 3.85461C5.77408 3.7817 5.90124 3.7192 6.02839 3.66711L6.2827 1.66711H9.77947L10.0338 3.66711C10.1715 3.7192 10.3013 3.7817 10.4232 3.85461C10.5451 3.92753 10.6643 4.00566 10.7808 4.08899L12.6723 3.30774L14.4206 6.27649L12.7835 7.49524C12.7941 7.56816 12.7994 7.63847 12.7994 7.70618V8.12805C12.7994 8.19576 12.7888 8.26607 12.7676 8.33899L14.4047 9.55774L12.6564 12.5265L10.7808 11.7452C10.6643 11.8286 10.5424 11.9067 10.4152 11.9796C10.2881 12.0525 10.1609 12.115 10.0338 12.1671L9.77947 14.1671H6.2827ZM8.06288 10.1046C8.67746 10.1046 9.20197 9.89107 9.63642 9.46399C10.0709 9.03691 10.2881 8.52128 10.2881 7.91711C10.2881 7.31295 10.0709 6.79732 9.63642 6.37024C9.20197 5.94316 8.67746 5.72961 8.06288 5.72961C7.4377 5.72961 6.91053 5.94316 6.48138 6.37024C6.05224 6.79732 5.83766 7.31295 5.83766 7.91711C5.83766 8.52128 6.05224 9.03691 6.48138 9.46399C6.91053 9.89107 7.4377 10.1046 8.06288 10.1046Z' fill='white'/>
+                    </svg>
+                </button>
+             </div>
+            <!--tabla de horas-->
+            <table class="menu" id="tabla-horas" style"visibility:hidden">
+                <tr><td>0hr 0%</td></tr>
+                <tr><td>0hr 0%</td></tr>
+                <tr><td>0hr 0%</td></tr>                   
+                <tr><td>0hr 0%</td></tr>
+                <tr><td>0hr 0%</td></tr>
+                <tr><td>0hr 0%</td></tr>
+                <tr><td>0hr 0%</td></tr>
+            </table>
+            
+            <!--botón de RT-->
+            <div class="boton2">
+            <button type="button" class="btn-settings"><b>RT</b></button>
+            </div>
+            <!--PRIMER GRAFINA DE LINEA-->
+                <table class="liner">
+                    <theader>
+                     <tr>
+                        <th style = "color:#0AFF05;" >Peso Sobre Broca (KLB)</th>
+                     </tr>
+                     <tr>
+                        <th style = "color:#0AFF05;"> -20 0 20 <hr></tr>
+                     </tr>
+                     <tr>
+                        <th style = "color:#00FFA3;">Contador Tuberias (tubos)</th>
+                     </tr>
+                     
+                     <tr>
+                        <th style="color:#00FFA3;">-20 200 400<hr></th>
+                     </tr>
+                     <tr>
+                        <th style= "color: #1982C4;">Profundidad</th>
+                     </tr>
+                     
+                        <th style= "color:#1982C4;">0 8000 10.000<hr>   </th>
+                     </tr>
+                     <tr>
+                     <th><canvas class= "grafica_liner" id="lineChart" width="200" height="600"></canvas></th>
+                     
+                    </theader>
+                </table>
+                <!--FIN-->
+
+                <!--SEGUNDA GRAFICA DEL CONTENEDOR-->
+                <table class="liner2" style="background-color: transparent; ">
+                    <thead>
+                        <tr>
+                            <th colspan="3" style="color: #FFC700;">Carga Gancho (klbs)</th>
+                        </tr>
+                        <tr>
+                            <th style="color: #FFC700;">0</th>
+                            <th style="color: #FFC700;">100</th>
+                            <th style="color: #FFC700;">200</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3" style="color: #07714B;">Velocidad Bloque (ft/min)</th>
+                        </tr>
+                        <tr>
+                            <th style="color: #07714B;">0</th>
+                            <th style="color: #07714B;">100</th>
+                            <th style="color: #07714B;">200</th>
+                            <th style="color: #07714B;">300</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3" style="color: #FF595E;">Posición Bloque (ft)</th>
+                        </tr>
+                        <tr>
+                            <th style="color: #FF595E;">0</th>
+                            <th style="color: #FF595E;">20</th>
+                            <th style="color: #FF595E;">40</th>
+                            <th style="color: #FF595E;">60</th>
+                            <th style="color: #FF595E;">80</th>
+                        </tr>
+                        <tr>
+                            <th colspan="5"><canvas id="graLiner" class="graLiner" width="200" height="600"></canvas></th>
+                        </tr>
+                    </thead>
+                </table>
+                <!--TABLA N3-->
+                <table class="liner3">
+                    <theader>
+                     <tr>
+                        <th style = "color:#E22FFF;" >Barriles por minuto (Bbls/min)</th>
+                     </tr>
+                     <tr>
+                        <th style = "color:#E22FFF;"> 0 5 10 15 <hr></tr>
+                     </tr>
+                     <tr>
+                        <th style = "color:#FF2E00;">Skokes por Minuto (SPM)</th>
+                     </tr>
+                     
+                     <tr>
+                        <th style="color:#FF2E00;">0 80 100 150 200<hr></th>
+                     </tr>
+                     <tr>
+                        <th style= "color: #FF2F7F;">Presión Bomba (ft)</th>
+                     </tr>
+                     
+                        <th style= "color:#FF2F7F;">0 1.000 2.000 3.000<hr>  </th>
+                     </tr>
+                     <tr>
+                     <th><canvas id="linerChart2" width="200" height="600"></canvas></th>
+                    </theader>
+                </table>
+            <!--FIN-->    
+    <script>
+        //GRÁFICA DE LÍNEA 2
+        Chart.defaults.color = '#fff';
+        const ctx4 = document.getElementById('graLiner').getContext('2d');
+        const graLiner = new Chart(ctx4, {
+            type: 'line',
+            data: {
+                labels: ['', '', '', '', '', '', '', '', ''],
+                datasets: [{
+                    label:'Velocidad e bloque  ft/min 0.0',
+                    data: [5, 10, 10, 5, 5, 10, 10, 5],
+                    backgroundColor: '#00925D',
+                    borderColor:'#00925D',
+                    fill: false,
+                    tension: 0.1
+                }, {
+                    label: 'Carga Gancho Klbs 8.3',
+                    data: [5, 6, 6, 5, 5, 9, 9, 5, 15],
+                    backgroundColor: '#FFC700',
+                    borderColor: '#FFC700',
+                    fill: false
+                }, {
+                    label: 'Posición Bloque ft 3.3',
+                    data: [5, 5, 5, 5, 5, 15, 15, 30, 5],
+                    backgroundColor: '#FF595E',
+                    borderColor: '#FF595E',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom', // Cambiado a 'bottom'
+                        align: 'end', // Alineado a la derecha
+                        labels: {
+                            padding: 20 // Espacio entre la leyenda y la gráfica
+                        }
+                    }
+                },
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const ctx6 = document.getElementById('linerChart2').getContext('2d');
+        const graLiner2 = new Chart(ctx6, {
+            type: 'line',
+            data: {
+                labels: ['', '', '', '', '', '', '', '', ''],
+                datasets: [{
+                    label: 'Barriles Por Minuto Bbls/min 0.0',
+                    data: [5, 5, 5, 5, 5, 5, 5, 5, 5],
+                    backgroundColor: '#E335FF',
+                    borderColor:'#E335FF',
+                    fill: false,
+                    tension: 0.1
+                }, {
+                    label: 'Stokes Por Minuto SPM 0.0',
+                    data: [5, 6, 6, 6, 6, 6, 6, 6, 15,5],
+                    backgroundColor: '#FF2E00',
+                    borderColor: '#FF2E00',
+                    fill: false
+                }, {
+                    label: 'Posición Bomba 0.0',
+                    data: [5, 5, 5, 17, 10, 5, 10, 5, 6],
+                    backgroundColor: '#FF2F7F',
+                    borderColor: '#FF2F7F',
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom', // Cambiado a 'bottom'
+                        align: 'end', // Alineado a la derecha
+                        labels: {
+                            padding: 20// Espacio entre la leyenda y la gráfica
+                        }
+                    }
+                },
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    //FIN
+    </script>
+    </div>
+</div>
+    <div class="contenedor4">
+        <h2>Velocidad de carga</h2>
+        <canvas class="grafica4" id="grafica4"></canvas>
+    </div>
+    <!--tabla de métricas-->
+    <div class="tabla">
+        <table>
+            <thead>
+                <!--Encabezado-->
+                <tr>
+                <th colspan="9">MÉTRICAS DEL DÍA DESDE LAS 00:00</th>
+                <tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td><b>RIH</b></td>
+                <td><b>12.53</b><p>Horas<P><h3>Tiempo Bloque Detenido</h3></td>
+                <td><b>1.32<b><p>Horas</p><h3>Tiempo Bloque Bajando</h3></td>
+                <td><b>0.00</b><p>Horas</p><h3>Tiempo Prueba Preción</h3></td>
+            </tr>
+            <tr>
+                <td><b>6.98</b><p>Horas</p><h3>Juntas Por Hora</h3></td>
+                <td><b>1.37</b><p>Horas</b><h3>Tiempos Bloque Subiendo</h3></td>
+                <td><b>0.00</b><p>Horas</p><h3>Tiempos Molienda Limpieza</h3></td>
+                <td><b>0.00</b><p>Horas</p><h3>Contador Pruebas Presión</h3></td>
+            </tr>
+            <tbody>
+        </table>
+    </div>
+<!--contenedor No 5 Gráfica de cuña a cuña-->
+    <div class ="contenedor5">
+        <div class="incon-settings">
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?><svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <path d='M6.2827 14.1671L6.02839 12.1671C5.89064 12.115 5.76084 12.0525 5.63898 11.9796C5.51712 11.9067 5.39792 11.8286 5.28136 11.7452L3.38992 12.5265L1.64154 9.55774L3.27866 8.33899C3.26807 8.26607 3.26277 8.19576 3.26277 8.12805V7.70618C3.26277 7.63847 3.26807 7.56816 3.27866 7.49524L1.64154 6.27649L3.38992 3.30774L5.28136 4.08899C5.39792 4.00566 5.51977 3.92753 5.64693 3.85461C5.77408 3.7817 5.90124 3.7192 6.02839 3.66711L6.2827 1.66711H9.77947L10.0338 3.66711C10.1715 3.7192 10.3013 3.7817 10.4232 3.85461C10.5451 3.92753 10.6643 4.00566 10.7808 4.08899L12.6723 3.30774L14.4206 6.27649L12.7835 7.49524C12.7941 7.56816 12.7994 7.63847 12.7994 7.70618V8.12805C12.7994 8.19576 12.7888 8.26607 12.7676 8.33899L14.4047 9.55774L12.6564 12.5265L10.7808 11.7452C10.6643 11.8286 10.5424 11.9067 10.4152 11.9796C10.2881 12.0525 10.1609 12.115 10.0338 12.1671L9.77947 14.1671H6.2827ZM8.06288 10.1046C8.67746 10.1046 9.20197 9.89107 9.63642 9.46399C10.0709 9.03691 10.2881 8.52128 10.2881 7.91711C10.2881 7.31295 10.0709 6.79732 9.63642 6.37024C9.20197 5.94316 8.67746 5.72961 8.06288 5.72961C7.4377 5.72961 6.91053 5.94316 6.48138 6.37024C6.05224 6.79732 5.83766 7.31295 5.83766 7.91711C5.83766 8.52128 6.05224 9.03691 6.48138 9.46399C6.91053 9.89107 7.4377 10.1046 8.06288 10.1046Z' fill='white'/>
+            </svg>
+        </div>
+        <h2>CICLO CUÑA A CUÑA</h2>
+        <canvas id="gracu" class="gracu"></canvas>
+        
+    </div>
+    <div class="tabla2">
+        <table>
+            <thead>
+                <!--Encabezado-->
+                <tr>
+                <th colspan="9">TIEMPO ACUMULADO POR HORA</th>
+                <tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td><h3>Tiempo de cuña</h3><b>49</b><p>min<P></td>
+                <td><h3>Juntas En Pozo</h3><b>227<b><p>min</p></td>
+                <td><h3>Tiempo Circulación</h3><b>0</b><p>min</p></td>
+            </tr>
+            <tr>
+                <td><h3>Tiempo libre</h3><b>0</b><p>min</p></td>
+                <td><h3>Tiempos Con Carga</h3><b>8</b><p>min</b></td>
+                <td><h3>Tiempos Conexión</h3><b>3</b><p>min</p></td>
+            </tr>
+            <tbody>
+        </table>
+    </div>
+
+<!--contenedor de brasev-->
+    <div class="alarmas">
+        <h2>BRASEV - 5CASTILLA-41H</h2> 
+        <img src='img/alarma.png' class="campana">
+        <h3>Alarmas - Alestas</h3>
+        <p class ="alerta"><img src='img/aler.png' class="icon"> No hay alarmas o alertas.</p>
+    </div>
+
+<!--contenedro Survey-->
+<div class= "contenedor6">   
+    <div class = "survey">
+        <h2> SURVEY</h2>
+        <P style = "color: white;" class="alerta2"><img src='img/aler.png' class="icon2">No hay survey disponible.</P>
+    </div>
+</div>
+<!--Componente de valvulas-->
+<!--<div class = "valvulas">
+</div>-->
+
+<!--Líne progresiva-->
+<div class= "linePro">
+    <h1 style = "color: white;"></h1>
+    <canvas id="lineProgre"></canvas>
+</div>
+
+
+<script>
+    //Grafica de linea progresiva
+    Chart.defaults.color = " white"
+
+    //datos
+    const data = [];
+    const data2 = [];
+    let prev = 100;
+    let prev2 = 80; 
+    //logina matemáica
+    for (let i = 0; i < 1000; i ++) {
+        prev += 5 - Math.random() * 10;
+        data.push({x : i, y:prev});
+        prev2 += 5 - Math.random() * 10;
+        data2.push({ x: i, y:prev2});
+    }
+
+    //animación
+    const totalDuration = 10000;
+    const delayBetweenPoints = totalDuration / data.length;
+    const previousY = (linePro) => linePro.index === 0 
+    ? linePro.chart.scales.y.getPixelForValue(100) 
+    : linePro.chart.getDatasetMeta(linePro.datasetIndex).data[linePro.index - 1].getProps(['y'], true).y;
+    
+    const animation = {
+  x: {
+    type: 'number',
+    easing: 'linear',
+    duration: delayBetweenPoints,
+    from: NaN, 
+    delay(linePro) {
+      return linePro.index * delayBetweenPoints;
+    }
+  },
+  y: {
+    type: 'number',
+    easing: 'linear',
+    duration: delayBetweenPoints,
+    from: previousY,
+    delay(linePro) {
+      return linePro.index * delayBetweenPoints;
+    }
+  }
+};
+
+    //configuración y creacionnde de la grafica
+    const linePro = document.getElementById ("lineProgre").getContext('2d');
+    const lineProgre = new Chart(linePro, {
+        type: 'line',
+        data: {
+            //labels: ['Peso sobre Broca', 'Contador Tuberías', 'Profundidad'],
+            datasets: [{
+                label : 'Linea1',
+                //label : 'Gráfcia principal',
+                //data: [10, 15, 20, 25],
+                //backgroundColor: '009DFF', 
+                borderColor: '#0AFF05', 
+                borderWidth: 1,
+                radius: 0,
+                data:  data, //llama a la data
+                },
+                {
+                label : 'Linea2',
+                borderColor: '#1982C4',
+                borderWidth: 1,
+                radius: 0,
+                data: data2, //llama a la data2
+            }]
+        },
+            options : {
+                animation: animation, //llama la configuración de la animación
+                interaction: {
+                    intersect: false
+                },
+                plugins: {
+                    legend: false
+                },
+                responsive: true,
+
+                 scales: {
+                    x: {
+                        type: 'linear'
+                }
+            }
+        }
+});
+//fin
+</script>
+<!--javaScript-->
+    <script>
+        //PERMITE DAR ESTILOS EN GENERAL
+        Chart.defaults.color = '#fff'//camniar toda al legenda a blanco.
+        // Gráfica de pastel
+        const ctx1 = document.getElementById('workoverChart').getContext('2d');
+        const workoverChart = new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: ['Perforación', 'Mantenimiento', 'Reparaciones', 'Inspección'],
+                datasets: [{
+                    label: 'Actividades reportadas',
+                    data: [30, 25, 20, 25],
+                    backgroundColor: [
+                        'rgba(85, 255, 237)',
+                        'rgba(158, 250, 252)',
+                        'rgba(55, 255, 167)',
+                        'rgba(64, 183, 187)'
+                    ],
+                    borderColor: 'rgba(0, 86, 101)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                cutoutPercentage: 8,
+                responsive: true,
+                
+                //animation: {
+                    //duration: 1500,
+                    //easing: 'easeOutBounce'
+                //},
+                plugins: {
+                    legend: {
+                        position: 'right',
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                    
+                }
+            }
+        });
+        //FIN
+
+        // Gráfica de barras
+        const ctx2 = document.getElementById('grafica2').getContext('2d');
+        const grafica2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Operativo', 'Operativo', 'Esperas', 'Standby'],
+                datasets: [{
+                    label: 'ESTADOS',
+                    data: [46, 20, 75, 100],
+                    backgroundColor: [
+                        'rgba(26, 189, 4)',
+                        'rgba(255, 86, 1)',
+                        'rgba(116, 80, 148)',
+                        'rgba(254, 217, 7)'
+                    ],
+                    borderColor: [
+                        'rgba(0, 255, 212)',
+                        'rgba(255, 189, 0)',
+                        'rgba(227, 111, 255)',
+                        'rgba(255, 255, 133)'
+                    ],
+                    //personalización Gráfia de barras
+                    borderWidth: 2,
+                    borderRadius: 9,
+                    borderSkinned: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
+                title: {
+                    display: true,
+                    text: 'Chart.js Bar Chart'
+                },
+                indexAxis: 'y',
+                scales: {
+                    //dieciones de escala
+                    x: {
+                        grid: {
+                            offset: true
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                //animacion
+                animation: {
+                    duration: 1000,
+                    easing: 'easeInOutQuad'
+                }
+            }
+        });
+        //FIN
+
+        // Gráfica de líneas 0
+        const ctx3 = document.getElementById('grafica4').getContext('2d');
+        const grafica4 = new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['Velocidad de carga', 'Rendimiento', 'Tiempo', 'Bloque'],
+                datasets: [{
+                    label: 'Velocidad de carga',
+                    data: [25, 45, 45, 20],
+                    backgroundColor: 'rgba(75, 192, 192, 0.4)',
+                    borderColor: 'rgba(0, 253, 187)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                animation: {
+                    duration: 2000,
+                    easing: 'easeInOutExpo'
+                }
+            }
+        });
+        //FIN
+
+        //GRAFICA DE LINEA 1
+const ctx = document.getElementById('lineChart').getContext('2d');
+const lineChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        //MORE ILLUSTARIONS GRFICATION
+        labels: ['', '', '', '', '', '', '', '', ''],//datos
+        datasets: [{
+            label: 'Peso sobre Broca (KLB) 0.0',
+            data: [5, 10, 8, 12, 9, 5, 4, 4],
+            backgroundColor:'#0AFF05', //estilos de colores
+            borderColor:'#0AFF05', //estilos de colores
+            fill: false,
+            tension : 0.1
+        }, {
+            label: 'Contador Tuberías (Tubos) 7252.8',
+            data: [4, 5, 5, 15, 30, 5,10,10 ],
+            backgroundColor:'#63FFC7',
+            borderColor: '#63FFC7',
+            fill: false
+        }, {
+            label: 'Profundidad (ft) 227.0',
+            data: [5, 5, 5, 5, 5, 15, 15, 5],
+            backgroundColor: '#009DFF',
+            borderColor: '#009DFF',
+            fill: false
+        }]
+    
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'bottom', // Cambiado a 'bottom'
+                align: 'end', // Alineado a la derecha
+                labels: {
+                    padding: 20 // Espacio entre la leyenda y la gráfica
+                }
+            }
+        },
+        indexAxis: 'y',
+        scales: {
+            x: {
+                beginAtZero: true
+            }
+        
+        }
+    }
+});
+//FIN
+
+//botón para mostrar/ocultar la tabla de horas
+document.getElementById("buton-settings").addEventListener('click', function() {
+    const table = document.getElementById('tabla-horas');
+    if (table.style.display === "none") {
+        table.style.display = "table";
+    } else {
+        table.style.display = " none";
+    }
+    
+});
+
+//gráfica CUAÑA A CUÑA
+const gra = document.getElementById('gracu').getContext('2d');
+
+// Crear el degradado de colores
+const gradient = gra.createLinearGradient(0, 0, 0, 400); // Ajuste del degradado de arriba hacia abajo
+gradient.addColorStop(0, '#00FFF0'); // Color inicial
+gradient.addColorStop(1, '#0F1D1E'); // Color final
+const gracu = new Chart(gra, { // crar nueva gráfica de barras
+    type: 'bar',
+    data: {
+        labels: ['226'],
+        datasets: [{
+            label: 'SENCILLO',
+            data: [10],
+            backgroundColor: gradient, // Aplicar el degradado
+            borderColor: '#0F1D1E',
+            borderWidth: 1,
+            borderRadius: 9
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        plugins: {
+            tooltip: {
+                enabled: true
+            },
+            legend: {
+                position: 'right',
+                labels: {
+                    padding: 5, // Espacio entre la leyenda y la gráfica
+                    boxWidth: 20 // Ancho de la caja de color en la leyenda
+                }
+            }
+        }
+    }
+});
+//fin
+
+//cambio de colores dentro el body
+    //document.body.style.background = '#000';
+    //setTimeout(() => document.body.style.background = '', 2000);
+    
+//Gráfica cuña a cuña
+
+</script>
+</div> 
+    <script src="js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chat.js/3.7.0/chart.min.js"></script>
+</body>
+</html>

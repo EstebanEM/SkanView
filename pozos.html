@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="english">
+  <head>
+    <title>POZOS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-theme-neutral-dark);
+        background: var(--dl-color-theme-neutral-light);
+
+        fill: var(--dl-color-theme-neutral-dark);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="css/style.css" />
+    <div>
+      <link href="css/pozos.css" rel="stylesheet" />
+
+      <div class="pozos1-container">
+        <div class="pozos1-pozos1">
+          <div class="pozos1-frame32">
+            <img
+              src="public/external/rectangle1241045-asmk-1000h.png"
+              alt="Rectangle1241045"
+              class="pozos1-rectangle124"
+            />
+            
+          </div>
+          <img
+            src="public/external/imageremovebgpreview11045-r9sm-700h.png"
+            alt="imageremovebgpreview11045"
+            class="pozos1-imageremovebgpreview1"
+          />
+          <img
+            src="public/external/ellipse71045-kid.svg"
+            alt="Ellipse71045"
+            class="pozos1-ellipse7"
+          />
+          <img
+            src="public/external/ellipse221045-npij.svg"
+            alt="Ellipse221045"
+            class="pozos1-ellipse22"
+          />
+          <img
+            src="public/external/ellipse231045-1f9j.svg"
+            alt="Ellipse231045"
+            class="pozos1-ellipse23"
+          />
+          <img
+            src="public/external/ellipse241045-z66l.svg"
+            alt="Ellipse241045"
+            class="pozos1-ellipse24"
+          />
+          <img
+            src="public/external/ellipse271045-fn7s.svg"
+            alt="Ellipse271045"
+            class="pozos1-ellipse27"
+          />
+          <img
+            src="public/external/ellipse281045-u7af.svg"
+            alt="Ellipse281045"
+            class="pozos1-ellipse28"
+          />
+          <img
+            src="public/external/ellipse251045-vn4z.svg"
+            alt="Ellipse251045"
+            class="pozos1-ellipse25"
+          />
+          <img
+            src="public/external/ellipse261045-iqux.svg"
+            alt="Ellipse261045"
+            class="pozos1-ellipse26"
+          />
+          <span class="pozos1-text10"><span>ACTIVO</span></span>
+          <span class="pozos1-text12"><span>OFFLINE</span></span>
+          <span class="pozos1-text14"><span>ACTIVO</span></span>
+          <span class="pozos1-text16"><span>ACTIVO</span></span>
+          <span class="pozos1-text18"><span>OFFLINE</span></span>
+          <span class="pozos1-text20"><span>ACTIVO</span></span>
+          <span class="pozos1-text22"><span>ACTIVO</span></span>
+          <span class="pozos1-text24"><span>ACTIVO</span></span>
+          <span class="pozos1-text26">
+            <span class="pozos1-text27">POZO:</span>
+            <span>CASTILLAS - 41H</span>
+          </span>
+          <span class="pozos1-text29">
+            <span class="pozos1-text30">POZO:</span>
+            <span>CASTILLAS - 42H</span>
+          </span>
+          <span class="pozos1-text32">
+            <span class="pozos1-text33">POZO:</span>
+            <span>CASTILLAS - 43H</span>
+          </span>
+          <span class="pozos1-text35">
+            <span class="pozos1-text36">POZO:</span>
+            <span>CASTILLAS - 41H</span>
+          </span>
+          <span class="pozos1-text38">
+            <span class="pozos1-text39">POZO:</span>
+            <span>CASTILLAS - 41H</span>
+          </span>
+          <span class="pozos1-text41">
+            <span class="pozos1-text42">POZO:</span>
+            <span>CASTILLAS - 41H</span>
+          </span>
+          <span class="pozos1-text44">
+            <span class="pozos1-text45">POZO:</span>
+            <span>CASTILLAS - 41H</span>
+          </span>
+          <span class="pozos1-text47">
+            <span class="pozos1-text48">POZO:</span>
+            <span>CASTILLAS - 41H</span>
+          </span>
+          <!--Enlace al index-->
+          <a href="index.html" class="button"><img
+            src="public/external/vector1045-nhts.svg"
+            alt="Vector1045"
+            class="pozos1-vector1"
+          /></a>
+          <img
+            src="public/external/vector1045-ejj6.svg"
+            alt="Vector1045"
+            class="pozos1-vector2"
+          />
+          <img
+            src="public/external/vector1045-nzsj.svg"
+            alt="Vector1045"
+            class="pozos1-vector3"
+          />
+          <img
+            src="public/external/vector1045-gtb.svg"
+            alt="Vector1045"
+            class="pozos1-vector4"
+          />
+          <img
+            src="public/external/vector1045-jynk.svg"
+            alt="Vector1045"
+            class="pozos1-vector5"
+          />
+          <img
+            src="public/external/vector1045-e1en.svg"
+            alt="Vector1045"
+            class="pozos1-vector6"
+          />
+          <img
+            src="public/external/vector1045-512.svg"
+            alt="Vector1045"
+            class="pozos1-vector7"
+          />
+          <img
+            src="public/external/gameiconsoilrig1045-gv6hw.svg"
+            alt="gameiconsoilrig1045"
+            class="pozos1-gameiconsoilrig"
+          />
+          <span class="pozos1-text50"><span>POZOS</span></span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

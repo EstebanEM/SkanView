@@ -1,0 +1,190 @@
+/* Estructura básica del login */
+body{
+  font-family: 'Julius Sans One', sans-serif;
+}
+.login-form, .form-title, .form-label, .btn-entrar{
+  font-family: 'Julius Sans One', sans-serif;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000;
+}
+
+/* Contenedor principal que abarca todo */
+.login-container {
+  display: flex;
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  background-color: #000000;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(47, 6, 53, 0.767);
+  border: 15
+  px;
+}
+
+/* Contenedor 1: Imagen principal y logo */
+.image-container {
+  position: relative;
+  width: 50%; 
+
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  left: 22px;
+  top:60px ;
+  object-fit:fill; /* Imagen ocupa todo el contenedor sin deformarse */
+  border-radius: 4%;
+}
+
+.logo {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 170px;
+  height: auto;
+}
+
+/* Contenedor 2: Formulario */
+.form-container {
+  position: relative;
+  width: 50%;
+  padding: 40px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.vector{
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  
+}
+
+.icono-user{
+  position: relative;
+  width: 5%;
+  top: -50px;
+  left: 195px;
+  z-index: 8;
+}
+
+/* Título del formulario */
+.form-title {
+  color: white;
+  text-align: center;
+  font-weight: 400;/*Ajustes en el texto*/
+  line-height: 24px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  z-index: 1;
+}
+
+.form-h2{
+position: absolute;
+width: 74px;
+height: 24px;
+left: 964.65px;
+top: 214.11px;
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 24px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #FFFFFF;
+}
+
+/* Estilos del formulario */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-label {
+  color: white;
+  font-size: 13px;
+  margin-bottom: 8px;
+  width: 100%;
+  z-index: 1;
+}
+
+.form-input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgb(255, 255, 255);
+  padding: 10px 0;
+  font-size: 16px;
+  color: white;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+  transition: border-bottom-color 0.3s ease;
+  z-index: 1;
+}
+
+
+
+.form-input:focus {
+  border-bottom-color: #00d1ff; /* Línea azul cuando se enfoca */
+}
+
+/* Botón de envío */
+.btn-entrar {
+  display: inline-block;
+  text-decoration: none;
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  border: 2px solid white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 1;
+}
+
+.btn-entrar:hover {
+  background-color: white;
+  color: black;
+}
+
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+  .login-container {
+      flex-direction: column;
+      height: auto;
+  }
+
+  .image-container, .form-container {
+      width: 100%;
+      height: 300px;
+  }
+
+  .form-container {
+      padding: 20px;
+  }
+
+  .main-image {
+      height: 100%;
+  }
+
+  .form-input, .btn-entrar {
+      width: 100%;
+  }
+}

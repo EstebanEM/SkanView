@@ -1,0 +1,459 @@
+html {
+  font-family: Inter;
+  font-size: 16px;
+}
+
+body{
+  background-color: black;
+}
+
+.pozos1-container {
+  width: 100%;
+  display: center;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.pozos1-pozos1 {
+  width: 100%;
+  height: 907px;
+  display: center;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+ 
+}
+.pozos1-frame32 {
+  gap: 10px;
+  top: 0px;
+  left: 0px;
+  width: 1409px;
+  display: flex;
+  padding: 10px;
+  position: absolute;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+  
+}
+.pozos1-rectangle124 {
+  width: auto;
+  height: 961px;
+  align-self: stretch;
+  border-radius: 25px;
+  
+}
+.pozos1-imageremovebgpreview1 {
+  top: 23.4490966796875px;
+  left: 192px;
+  width: 1079px;
+  height: 634px;
+  opacity: 0.80;
+  position: absolute;
+  
+}
+.pozos1-ellipse7 {
+  top: 102.903564453125px;
+  left: 145px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  z-index: 1;
+}
+.pozos1-ellipse22 {
+  top: 490.9703369140625px;
+  left: 145px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  z-index: 1;
+}
+.pozos1-ellipse23 {
+  top: 495.9703369140625px;
+  left: 447.3599853515625px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  z-index: 1;
+}
+.pozos1-ellipse24 {
+  top: 496.9703369140625px;
+  left: 770.261962890625px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  z-index: 1;
+}
+.pozos1-ellipse27 {
+  top: 97.903564453125px;
+  left: 437.78515625px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  z-index: 1;
+}
+.pozos1-ellipse28 {
+  top: 490.9703369140625px;
+  left: 1131.5947265625px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  z-index: 1;
+}
+.pozos1-ellipse25 {
+  top: 97.903564453125px;
+  left: 775.261962890625px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+.pozos1-ellipse26 {
+  top: 95.903564453125px;
+  left: 1126.5947265625px;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+.pozos1-text10 {
+  top: 95.903564453125px;
+  left: 163.5px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+  z-index: 1;
+}
+.pozos1-text12 {
+  top: 88.903564453125px;
+  left: 453.28515625px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+  z-index: 1;
+}
+.pozos1-text14 {
+  top: 88.903564453125px;
+  left: 794.761962890625px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+  z-index: 1;
+}
+.pozos1-text16 {
+  top: 88.903564453125px;
+  left: 1151.0947265625px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+  z-index: 1;
+}
+.pozos1-text18 {
+  top: 484.1517333984375px;
+  left: 1147.0947265625px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+  z-index: 1;
+}
+.pozos1-text20 {
+  top: 484.9703369140625px;
+  left: 796px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.pozos1-text22 {
+  top: 484.9703369140625px;
+  left: 471px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.pozos1-text24 {
+  top: 484.9703369140625px;
+  left: 168px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.pozos1-text26 {
+  top: 311.1771240234375px;
+  left: 107.5px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.pozos1-text27 {
+  font-weight: 800;
+}
+.pozos1-text29 {
+  top: 311.1771240234375px;
+  left: 399.28515625px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.pozos1-text30 {
+  font-weight: 800;
+}
+.pozos1-text32 {
+  top: 311.1771240234375px;
+  left: 744.0224609375px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.pozos1-text33 {
+  font-weight: 800;
+}
+.pozos1-text35 {
+  top: 311.1771240234375px;
+  left: 1090.759521484375px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.pozos1-text36 {
+  font-weight: 800;
+}
+.pozos1-text38 {
+  top: 737.9945068359375px;
+  left: 1095.0947265625px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.pozos1-text39 {
+  font-weight: 800;
+}
+.pozos1-text41 {
+  top: 732.9945068359375px;
+  left: 746.4267578125px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.pozos1-text42 {
+  font-weight: 800;
+}
+.pozos1-text44 {
+  top: 737.9945068359375px;
+  left: 410.8599853515625px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.pozos1-text45 {
+  font-weight: 800;
+}
+.pozos1-text47 {
+  top: 732.9945068359375px;
+  left: 119px;
+  color: rgba(255, 255, 255, 1);
+  height: auto;
+  position: absolute;
+  font-size: 14px;
+  font-style: ExtraBold;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 800;
+  line-height: 24px;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.pozos1-text48 {
+  font-weight: 800;
+}
+.pozos1-vector1 {
+  top: 125.9703369140625px;
+  left: 144px;
+  width: 96px;
+  height: 167px;
+  position: absolute;
+}
+.pozos1-vector2 {
+  top: 527.9703369140625px;
+  left: 447.3599853515625px;
+  width: 96px;
+  height: 167px;
+  position: absolute;
+}
+.pozos1-vector3 {
+  top: 527.9703369140625px;
+  left: 775.261962890625px;
+  width: 96px;
+  height: 167px;
+  position: absolute;
+}
+.pozos1-vector4 {
+  top: 125.9703369140625px;
+  left: 775.261962890625px;
+  width: 96px;
+  height: 167px;
+  position: absolute;
+}
+.pozos1-vector5 {
+  top: 125.9703369140625px;
+  left: 1131.5947265625px;
+  width: 96px;
+  height: 167px;
+  position: absolute;
+}
+.pozos1-vector6 {
+  top: 527.9703369140625px;
+  left: 1131.5947265625px;
+  width: 96px;
+  height: 167px;
+  position: absolute;
+}
+.pozos1-vector7 {
+  top: 125.9703369140625px;
+  left: 437.78515625px;
+  width: 96px;
+  height: 167px;
+  position: absolute;
+}
+.pozos1-gameiconsoilrig {
+  top: 527.9703369140625px;
+  left: 96px;
+  width: 192px;
+  height: 186px;
+  position: absolute;
+}
+.pozos1-text50 {
+  top: 37.903564453125px;
+  left: 615px;
+  color: rgba(255, 255, 255, 1);
+  width: 179px;
+  height: auto;
+  position: absolute;
+  font-size: 36px;
+  font-style: Bold;
+  text-align: left;
+  font-family: Montserrat;
+  font-weight: 700;
+  line-height: 16px;
+  font-stretch: normal;
+  text-decoration: none;
+}
