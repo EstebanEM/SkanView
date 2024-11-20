@@ -2,41 +2,54 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - SKANVIEW</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/login.css" />
+    <link rel="icon" href="img/SkanHawk  black .png" />
   </head>
+
   <body>
     <div class="login-container">
       <div class="image-container">
-        <img src="img/login.png" alt="Imagen de trabajador" class="main-image">
-        <img src="img/skanhawk.png" alt="Logo SKANVIEW" class="logo">
+        <img src="img/login.png" alt="Imagen de trabajador" class="main-image" />
       </div>
-
+      
       <div class="form-container">
         <form id="LoginForm" class="login-form">
-          <h1 class="form-title">SKANVIEW</h1>
-          <img src="img/Rectangle 136.png" class="vector" alt="decoration">
-          <h2 class="form-title" style="color: rgb(204, 204, 204);">LOGIN</h2>
-          
-          <label for="email" class="form-label">Usuario</label>
-          <input type="email" name="email" id="email" required class="form-input">
-          <img src="img/user.png" alt="Icono usuario" class="icono-user">  
-          
-          <label for="password" class="form-label">Contraseña</label>
-          <input type="password" name="password" id="password" required class="form-input">
-          
+          <img class="logo" src="img/SkanHawk logo .png" alt="Logo SkanHawk" />
+          <h1 class="form-title">REPORTE DE OPERACIONES</h1>
+          <h2 class="form-h2">LOGIN</h2>
+
+          <div class="input-group">
+            <label for="email" class="form-label">Usuario</label>
+            <input type="email" name="email" id="email" required class="form-input" aria-label="Usuario" />
+            <img src="img/user.png" alt="Icono usuario" class="icono-user" />
+          </div>
+
+          <div class="input-group">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" name="password" id="password" required class="form-input" aria-label="Contraseña" />
+            <!--<img src="img/bloquear.png" alt="Icono usuario" class="icono-padlock" />-->
+          </div>
+
           <button type="button" class="btn-entrar" id="submitBtn">INGRESAR</button>
         </form>
+        <div class="below">
+          <p>
+            <a href="#">Recuperar nombre de usuario</a><br/>
+            <a href="#">Olvidé mi contraseña</a>
+          </p>
+        </div>
+        <button type="button" class="btn-suport">Soporte</button>
       </div>
     </div>
-<!--Script de validación-->
+
+    <!-- Script de validación -->
     <script>
       const submitBtn = document.getElementById('submitBtn');
 
-      submitBtn.addEventListener('click', function() {
+      submitBtn.addEventListener('click', function () {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 

@@ -1,11 +1,9 @@
 /* Estructura básica del login */
-body{
-  font-family: 'Julius Sans One', sans-serif;
-}
 .login-form, .form-title, .form-label, .btn-entrar{
   font-family: 'Julius Sans One', sans-serif;
 }
 body, html {
+  font-family: 'Julius Sans One', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,103 +12,89 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
+  background-color: #ffffff;
+  /*flex-wrap: wrap;*/
 }
 
 /* Contenedor principal que abarca todo */
 .login-container {
   display: flex;
-  width: 100%;
-  max-width: 900px;
-  height: 500px;
+  width: 1050px;
+  height: 90vh;
   background-color: #000000;
+  box-shadow: 1px 1px 20px rgba(5, 36, 51, 0.356);
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(47, 6, 53, 0.767);
-  border: 15
-  px;
 }
-
-/* Contenedor 1: Imagen principal y logo */
 .image-container {
   position: relative;
-  width: 50%; 
-
+  overflow: hidden;
+  width: 50%;
 }
-
 .main-image {
   width: 100%;
   height: 100%;
-  left: 22px;
-  top:60px ;
-  object-fit:fill; /* Imagen ocupa todo el contenedor sin deformarse */
-  border-radius: 4%;
+  object-fit: cover;
 }
 
 .logo {
-  position: absolute;
-  top: 15px;
+  top: 20px;
   left: 15px;
-  width: 170px;
+  width: 200px;
   height: auto;
+  margin-top: 20px;
+  filter: brightness(1.2) contrast(1.3) saturate(1.5);
+  transition: filter 0.3s ease; 
 }
+
 
 /* Contenedor 2: Formulario */
 .form-container {
+  background-image: linear-gradient(#1F6778, #051D34 );
+  color: white;
+  align-items: center;
   position: relative;
   width: 50%;
-  padding: 40px; 
+  padding: 20px; 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 5px;
+  align-items: center;
   overflow: hidden;
 }
-.vector{
-  position:absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  object-fit: cover;
-  
-}
 
-.icono-user{
+.icono-user {
   position: relative;
-  width: 5%;
-  top: -50px;
-  left: 195px;
-  z-index: 8;
+  width: 7%;
+  top: -80px;
+  left: 260px;
 }
-
+.icono-padlock{
+  position: relative;
+  width: 7%;
+  top: -80px;
+  left: 272px;
+}
 /* Título del formulario */
 .form-title {
   color: white;
   text-align: center;
-  font-weight: 400;/*Ajustes en el texto*/
+  font-weight: 400;
   line-height: 24px;
   margin-bottom: 20px;
-  font-size: 24px;
-  z-index: 1;
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 25px;
 }
 
 .form-h2{
-position: absolute;
-width: 74px;
-height: 24px;
-left: 964.65px;
-top: 214.11px;
-font-style: normal;
-font-weight: 400;
 font-size: 15px;
-line-height: 24px;
-display: flex;
-align-items: center;
-text-align: center;
-color: #FFFFFF;
+font-weight: 200;
 }
 
 /* Estilos del formulario */
 .login-form {
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,7 +105,6 @@ color: #FFFFFF;
   font-size: 13px;
   margin-bottom: 8px;
   width: 100%;
-  z-index: 1;
 }
 
 .form-input {
@@ -134,20 +117,19 @@ color: #FFFFFF;
   outline: none;
   width: 100%;
   margin-bottom: 20px;
+  border-radius: 5px;
   transition: border-bottom-color 0.3s ease;
-  z-index: 1;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-
 
 .form-input:focus {
-  border-bottom-color: #00d1ff; /* Línea azul cuando se enfoca */
+  border-bottom-color: #00d1ff;
+  background-color: #051D34; /* Línea azul cuando se enfoca */
 }
+
 
 /* Botón de envío */
 .btn-entrar {
-  display: inline-block;
-  text-decoration: none;
   background-color: transparent;
   color: white;
   padding: 10px 20px;
@@ -155,36 +137,133 @@ color: #FFFFFF;
   border: 2px solid white;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
-  z-index: 1;
+  cursor: pointer;
 }
 
 .btn-entrar:hover {
   background-color: white;
   color: black;
 }
+/*Bóton de soporte*/
+.btn-suport{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  align-items: end;
+  text-align: left;
+  background-color: #411732;
+  color: white;
+  padding: 9px 15px;
+  font-size: 15px;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor:pointer;
+  box-shadow: 1px 1px 10px #00041d6e;
+}
 
+.btn-suport:hover{
+  transition: 2s ease;
+  transform: scale(1.2);
+  background-color: #FFFFFF;
+  color:#000000;
+}
+/*parte inferior del formulario*/
+.below {
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 15px 0;
+  margin-top: 20px;
+}
+.below a{
+  color: white;
+  text-decoration: none;
+}
+.below a:hover{
+  text-decoration: underline;
+}
 
 /* Responsividad para pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
+
   .login-container {
       flex-direction: column;
       height: auto;
+      width: 200%;
   }
 
-  .image-container, .form-container {
+  .below {
+    font-size: 13px;
+  }
+  .logo {
+    width: 200px;
+  }
+  .icono-user{
+    left:240px;
+    top:-79px;
+    transform: translateX(-50%);
+  }
+
+  .icono-padlock{
+    left:240px;
+    top:-79px;
+    transform: translateX(-50%);
+  }
+  .form-title{
+    font-size: 18px;
+    text-align: center;
+  }
+  .form-label{
+    font-size: 14px;
+    text-align: center;
+  }
+  .btn-entrar{
+    font-size: 16px;
+    padding: 9px 16px;
+    margin-top: 10px;
+  }
+  .btn-suport{
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin-top: 20px;
+  }
+   .form-container {
       width: 100%;
-      height: 300px;
-  }
-
-  .form-container {
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       padding: 20px;
   }
-
-  .main-image {
-      height: 100%;
+  .image-container {
+    display: none;
   }
 
-  .form-input, .btn-entrar {
-      width: 100%;
+  .form-input {
+      font-size: 14px;
+      padding: 6px 0;
+      text-align: center;
+      transition: all 0.5s ease;
+  }
+
+.btn-entrar, .form-input {
+  animation: fadeIn 1s ease-in-out ;
+}
+}
+/*Efecto de aimacon*/
+@keyframes fadeIn{
+  from {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+  to{
+      opacity: 1;
+      transform: translateY(0);
   }
 }
+
+
+
